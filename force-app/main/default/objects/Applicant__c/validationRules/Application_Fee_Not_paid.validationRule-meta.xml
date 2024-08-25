@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Fee_Not_paid</fullName>
+    <active>true</active>
+    <description>Cannot move to Qualification as Application Fee is not paid yet</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Status__c, &quot;Qualification&quot;),
+    NOT(Application_fee__c)
+)</errorConditionFormula>
+    <errorDisplayField>Application_fee__c</errorDisplayField>
+    <errorMessage>Cannot move to Qualification as Application Fee is not paid yet</errorMessage>
+</ValidationRule>
